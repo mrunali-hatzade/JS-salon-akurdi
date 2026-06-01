@@ -1,0 +1,170 @@
+.servicesContainer {
+  padding: 8rem 4rem;
+  background-color: var(--dark); /* Changed to dark */
+  position: relative;
+  border-top: 1px solid rgba(176, 125, 74, 0.15);
+  border-bottom: 1px solid rgba(176, 125, 74, 0.15);
+}
+
+/* Force global section headers to be light in this dark section */
+.servicesContainer :global(.section-title) {
+  color: var(--white);
+}
+
+.servicesContainer :global(.section-tag) {
+  color: var(--gold);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #231B16; /* Deep dark chocolate card background */
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(176, 125, 74, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  background-color: var(--dark);
+  border-color: var(--gold);
+  box-shadow: 0 20px 45px rgba(176, 125, 74, 0.25);
+}
+
+/* Image background hover effect */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bgImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(26, 20, 16, 0.75) 0%, rgba(26, 20, 16, 0.98) 100%);
+}
+
+.card:hover .bgImage {
+  opacity: 1;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iconWrapper {
+  font-size: 2.2rem;
+  margin-bottom: 1.8rem;
+  color: var(--bronze);
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.serviceName {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--white); /* White text */
+  transition: var(--transition);
+}
+
+.card:hover .serviceName {
+  color: var(--white);
+}
+
+.serviceDesc {
+  font-size: 0.98rem;
+  color: #B29F8D; /* Creamy-grey description */
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  flex-grow: 1;
+}
+
+.card:hover .serviceDesc {
+  color: rgba(253, 250, 246, 0.8);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gold); /* Gold price */
+  font-family: var(--font-serif);
+  transition: var(--transition);
+}
+
+.card:hover .price {
+  color: var(--gold);
+}
+
+.bookLink {
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.card:hover .bookLink {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--gold);
+}
+
+@media (max-width: 992px) {
+  .servicesContainer {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesContainer {
+    padding: 5rem 1.5rem;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 2.5rem 2rem;
+  }
+}

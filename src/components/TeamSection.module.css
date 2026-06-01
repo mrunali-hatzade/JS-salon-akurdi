@@ -1,0 +1,125 @@
+.teamContainer {
+  padding: 8rem 4rem;
+  background-color: var(--dark);
+  position: relative;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  text-align: center;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #231B16;
+  border: 1px solid rgba(176, 125, 74, 0.1);
+  padding: 2.5rem 2rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--bronze);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.imageContainer {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(176, 125, 74, 0.2);
+  transition: var(--transition);
+}
+
+.card:hover .imageContainer {
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+
+.stylistImg {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .stylistImg {
+  transform: scale(1.1);
+}
+
+.stylistName {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.stylistRole {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.stylistBio {
+  font-size: 0.82rem;
+  color: #B29F8D;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.bookBtn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(253, 250, 246, 0.2);
+  padding: 0.6rem 1.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.card:hover .bookBtn {
+  background: var(--bronze);
+  border-color: var(--bronze);
+}
+
+.bookBtn:hover {
+  background: var(--white) !important;
+  color: var(--dark) !important;
+}
+
+@media (max-width: 992px) {
+  .teamContainer {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamContainer {
+    padding: 5rem 1.5rem;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .card {
+    padding: 2rem 1.5rem;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

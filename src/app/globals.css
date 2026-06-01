@@ -1,40 +1,69 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #F8F3EC;
+  --sand: #E8D9C5;
+  --bronze: #B07D4A;
+  --gold: #D4AF37;
+  --dark: #1A1410;
+  --muted: #7A6A58;
+  --white: #FDFAF6;
+  --dark-gold: #8E6239;
+  --card-shadow: 0 12px 40px rgba(26, 20, 16, 0.04);
+  --card-shadow-hover: 0 20px 50px rgba(176, 125, 74, 0.15);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --font-sans: var(--font-jost), 'Jost', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
+  font-size: 108%; /* Scale up root font size by 8% (17.3px base) */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
   height: 100%;
 }
 
-html,
 body {
-  max-width: 100vw;
+  background-color: #FAF8F5;
+  color: var(--dark);
+  font-family: var(--font-sans);
+  font-weight: 300;
   overflow-x: hidden;
-}
-
-body {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sand);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bronze);
+}
+
+/* Base Headings & Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.05rem; /* Make paragraph text larger and highly legible */
+  line-height: 1.8;
+  color: var(--muted);
 }
 
 a {
@@ -42,8 +71,109 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Custom Selection */
+::selection {
+  background-color: var(--sand);
+  color: var(--dark);
+}
+
+/* Base Buttons */
+.btn-primary {
+  background: var(--bronze);
+  color: var(--white);
+  border: none;
+  padding: 0.95rem 2.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid var(--dark);
+  padding: 0.95rem 2.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* Helper/Utility classes for headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+}
+
+.section-tag::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--bronze);
+  margin: 0.5rem auto 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  color: var(--dark);
+  margin-top: 0.5rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--bronze);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

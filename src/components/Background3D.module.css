@@ -1,0 +1,78 @@
+.bgContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #FAF8F5; /* Keep the clean off-white base */
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  transition: transform 0.2s ease-out;
+  pointer-events: none;
+}
+
+.orb1 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(176, 125, 74, 0.25) 0%, rgba(212, 191, 160, 0.05) 70%, transparent 100%);
+  top: -100px;
+  right: -50px;
+}
+
+.orb2 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(232, 217, 197, 0.4) 0%, rgba(176, 125, 74, 0.05) 70%, transparent 100%);
+  bottom: -200px;
+  left: -150px;
+}
+
+.orb3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(212, 191, 160, 0.3) 0%, rgba(248, 243, 236, 0.05) 70%, transparent 100%);
+  top: 40%;
+  left: 30%;
+}
+
+/* Subtle grid overlay to give it a 3D structural dimension */
+.gridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(176, 125, 74, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(176, 125, 74, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .orb1 {
+    width: 300px;
+    height: 300px;
+  }
+  .orb2 {
+    width: 400px;
+    height: 400px;
+  }
+  .orb3 {
+    width: 250px;
+    height: 250px;
+  }
+  .gridOverlay {
+    background-size: 50px 50px;
+  }
+}

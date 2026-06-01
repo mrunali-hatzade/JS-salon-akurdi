@@ -1,0 +1,214 @@
+.galleryContainer {
+  padding: 8rem 4rem;
+  background-color: var(--cream);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid rgba(176, 125, 74, 0.2);
+  color: var(--muted);
+  padding: 0.6rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: var(--transition);
+}
+
+.filterBtn:hover {
+  border-color: var(--bronze);
+  color: var(--dark);
+}
+
+.activeFilterBtn {
+  background: var(--bronze);
+  color: var(--white);
+  border-color: var(--bronze);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  position: relative;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(176, 125, 74, 0.05);
+}
+
+/* Make the first and fourth item span larger to create a dynamic masonry feel */
+.itemLarge {
+  grid-row: span 2;
+  height: 584px;
+}
+
+.galleryImg {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.item:hover .galleryImg {
+  transform: scale(1.06);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(26, 20, 16, 0) 40%, rgba(26, 20, 16, 0.8) 100%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.itemCategory {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.itemTitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 8, 7, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(253, 250, 246, 0.1);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.closeBtn:hover {
+  background: var(--bronze);
+  transform: rotate(90deg);
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightboxImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightboxImg {
+  object-fit: contain;
+}
+
+.lightboxDetails {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--white);
+}
+
+.lightboxCategory {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.lightboxTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 992px) {
+  .galleryContainer {
+    padding: 6rem 2rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .itemLarge {
+    grid-row: span 1;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryContainer {
+    padding: 5rem 1.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .filters {
+    gap: 0.5rem;
+  }
+  .filterBtn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.65rem;
+  }
+}
