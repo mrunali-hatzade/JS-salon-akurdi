@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import { preconnect, prefetchDNS } from "react-dom";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -25,9 +27,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  preconnect("https://www.google.com");
+  prefetchDNS("https://www.google.com");
+  
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body>
+        <Preloader />
         {children}
       </body>
     </html>

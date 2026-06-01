@@ -111,12 +111,25 @@ export default function BookingSection({
 
   return (
     <section className={styles.bookingContainer} id="booking">
-      <div className="section-header">
+      <motion.div 
+        className="section-header"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <p className="section-tag">Reserve Your Experience</p>
         <h2 className="section-title">Book an Appointment</h2>
-      </div>
+      </motion.div>
 
-      <div className={styles.bookingInner}>
+      <motion.div 
+        className={styles.bookingInner}
+        initial={{ opacity: 0, y: 60, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ boxShadow: "0 25px 60px rgba(176, 125, 74, 0.15)" }}
+      >
         {!isSubmitted ? (
           <>
             {/* Steps Progress Indicator */}
@@ -376,7 +389,7 @@ export default function BookingSection({
             </button>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -327,7 +327,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
       icon: <Heart size={32} />,
       desc: 'Complete curated bridal packages including HD hair design, couture makeup, and glowing skin preps.',
       price: 'From ₹5,000',
-      image: '/service-skin.png',
+      image: '/hero-salon.png',
     },
     {
       name: 'Hair Spa',

@@ -148,11 +148,11 @@ export default function GallerySection() {
   ] as const;
 
   const galleryItems: GalleryItem[] = [
-    { id: 1, title: 'Balayage Transformation', category: 'hair', categoryLabel: 'Hair Transformation', image: '/service-hair.png', large: true },
+    { id: 1, title: 'Salon Interior', category: 'hair', categoryLabel: 'Ambience', image: '/gallery-1.jpg', large: true },
     { id: 2, title: 'Luxury Editorial Styling', category: 'bridal', categoryLabel: 'Bridal Styling', image: '/hero-salon.png' },
-    { id: 3, title: 'Gold Leaf Nail Detailing', category: 'nails', categoryLabel: 'Nail Art', image: '/service-nails.png' },
+    { id: 3, title: 'Our Setup', category: 'nails', categoryLabel: 'Experience', image: '/gallery-4.jpg' },
     { id: 4, title: 'Organic Hydra-Facial Glow', category: 'skin', categoryLabel: 'Skin Glow', image: '/service-skin.png', large: true },
-    { id: 5, title: 'Elegant Bridal Makeover', category: 'bridal', categoryLabel: 'Bridal Styling', image: '/hero-salon.png' },
+    { id: 5, title: 'Salon Exterior', category: 'bridal', categoryLabel: 'Visit Us', image: '/gallery-11.jpg' },
     { id: 6, title: 'Copper Red Highlights', category: 'hair', categoryLabel: 'Hair Colour', image: '/service-hair.png' },
   ];
 
