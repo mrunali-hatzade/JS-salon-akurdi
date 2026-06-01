@@ -1,6 +1,6 @@
 .servicesContainer {
   padding: 8rem 4rem;
-  background-color: var(--dark); /* Changed to dark */
+  background-color: var(--dark);
   position: relative;
   border-top: 1px solid rgba(176, 125, 74, 0.15);
   border-bottom: 1px solid rgba(176, 125, 74, 0.15);

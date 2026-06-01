@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import Background3D from '@/components/Background3D';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
@@ -38,7 +37,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Background3D />
       <main>
         <HeroSection />
         
