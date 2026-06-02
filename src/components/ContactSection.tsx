@@ -82,8 +82,8 @@ export default function ContactSection() {
                 <div>
                   <div className={styles.infoLabel}>Address</div>
                   <div className={styles.infoVal}>
-                    20/4, Lig Colony Road, Sindhu Nagar,<br />
-                    Sector 25, Pradhikaran, Akurdi, Pune
+                    Shubhashree Residency, Shop No. A3/A4<br />
+                    near Angan Hotel, Akurdi, Pune - 411035
                   </div>
                 </div>
               </motion.div>
@@ -124,11 +124,11 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15125.797241772658!2d73.7574165!3d18.6444583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9f1b0f12cab%3A0x2f4f269c55c18f57!2sSWATI&#39;S%20BEAUTY%20SALON%20SPA%20AND%20ACADEMY!5e0!3m2!1sen!2sin!4v1717319985956!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15125.797241772658!2d73.781365!3d18.6514683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b92c7272517b%3A0x5e762c4aff1afaaf!2sRAJUL%20STUDIO%20MakeUp%20Hair%20%26%20Beauty%20Salon!5e0!3m2!1sen!2sin!4v1717319985956!5m2!1sen!2sin"
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Swati's Beauty Salon Akurdi Location Map"
+              title="Rajul Studio Akurdi Location Map"
             />
           </motion.div>
         </div>
@@ -139,7 +139,7 @@ export default function ContactSection() {
         <div className={styles.footerTop}>
           <div>
             <div className={styles.footerLogo}>
-              Swati&apos;s <span>Salon</span>
+              Rajul <span>Studio</span>
             </div>
             <p className={styles.footerTagline}>
               Pune's premier unisex beauty salon, spa and academy in Pradhikaran, Akurdi — expert haircuts, colour, skin & nail treatments for everyone.
@@ -170,7 +170,7 @@ export default function ContactSection() {
         </div>
 
         <div className={styles.footerBottom}>
-          <div>© {new Date().getFullYear()} Swati&apos;s Beauty Salon, Pune. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Rajul Studio MakeUp Hair & Beauty Salon, Pune. All rights reserved.</div>
           
           <div className={styles.socials}>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">

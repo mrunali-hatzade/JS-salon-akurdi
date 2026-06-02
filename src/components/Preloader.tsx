@@ -42,7 +42,7 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className={styles.js}>SWATI&apos;S</span>
+            <span className={styles.js}>RAJUL STUDIO</span>
             <span className={styles.salon}>SALON</span>
           </motion.div>
           

@@ -119,7 +119,7 @@ export default function HeroSection() {
             >
               <Image
                 src={images[currentIndex]}
-                alt={`Swati's Salon Slide ${currentIndex + 1}`}
+                alt={`Rajul Studio Slide ${currentIndex + 1}`}
                 fill
                 priority
                 className={styles.heroImg}
