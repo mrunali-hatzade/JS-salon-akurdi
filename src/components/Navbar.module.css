@@ -85,21 +85,80 @@
 }
 
 .navBtn {
-  background: var(--bronze);
+  background: var(--dark);
   color: var(--white);
-  border: none;
-  padding: 0.7rem 1.8rem;
+  border: 1px solid var(--dark);
+  padding: 0.6rem 1.4rem;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 40px;
   transition: var(--transition);
 }
 
 .navBtn:hover {
-  background: var(--dark);
-  transform: translateY(-2px);
+  background: transparent;
+  color: var(--dark);
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.statusDot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.statusOpen {
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+}
+
+.statusOpen .statusDot {
+  background-color: #2e7d32;
+}
+
+.statusOpen .statusDot::after {
+  border: 1px solid #2e7d32;
+}
+
+.statusClosed {
+  color: #c62828;
+  background: rgba(198, 40, 40, 0.1);
+}
+
+.statusClosed .statusDot {
+  background-color: #c62828;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
 }
 
 .menuBtn {

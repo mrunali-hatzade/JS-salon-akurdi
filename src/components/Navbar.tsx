@@ -25,6 +25,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const checkOpenStatus = () => {
+      const now = new Date();
+      const istTimeStr = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+      const istTime = new Date(istTimeStr);
+      const hours = istTime.getHours();
+      // Open 10 AM to 8 PM every day
+      setIsOpen(hours >= 10 && hours < 20);
+    };
+
+    checkOpenStatus();
+    const interval = setInterval(checkOpenStatus, 60000); // Check every minute
+    return () => clearInterval(interval);
+  }, []);
+
   const triggerMagic = (e: React.MouseEvent) => {
     setLogoActive(true);
     setTimeout(() => setLogoActive(false), 500);
@@ -126,6 +143,10 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.navRight}>
+          <div className={`${styles.statusBadge} ${isOpen ? styles.statusOpen : styles.statusClosed}`}>
+            <span className={styles.statusDot}></span>
+            {isOpen ? 'Open Now' : 'Closed'}
+          </div>
           <button 
             className={styles.navBtn} 
             onClick={() => scrollToSection('booking')}

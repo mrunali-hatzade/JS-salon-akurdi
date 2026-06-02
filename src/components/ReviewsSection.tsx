@@ -15,7 +15,7 @@ const reviews = [
     avatar: 'P',
     color: '#B07D4A',
     review:
-      'Absolutely loved my hair transformation! The team at JS Salon understood exactly what I wanted. The colour turned out stunning and the atmosphere is so calming. Will definitely be coming back!',
+      "Absolutely loved my hair transformation! The team at Swati's Salon understood exactly what I wanted. The colour turned out stunning and the atmosphere is so calming. Will definitely be coming back!",
   },
   {
     id: 2,
@@ -426,7 +426,7 @@ export default function ReviewsSection() {
                     <label className={styles.label} htmlFor="fb-review">Your Review *</label>
                     <textarea
                       id="fb-review"
-                      placeholder="Tell us about your experience at JS Salon…"
+                      placeholder="Tell us about your experience at Swati's Salon…"
                       value={formData.review}
                       onChange={(e) => setFormData({ ...formData, review: e.target.value })}
                       className={`${styles.textarea} ${errors.review ? styles.inputError : ''}`}
@@ -478,7 +478,7 @@ export default function ReviewsSection() {
             animate={formInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.56, ease: [0.16, 1, 0.3, 1] }}
           >
-            Your honest feedback helps us serve you better and helps others discover JS Salon.
+            Your honest feedback helps us serve you better and helps others discover Swati&apos;s Salon.
           </motion.p>
         </div>
       </div>

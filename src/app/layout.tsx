@@ -18,8 +18,8 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "JS Salon — Unisex Hair Salon in Pradhikaran, Akurdi, Pune",
-  description: "JS Salon in Akurdi, Pune — premium unisex hair cuts, hair colour, skin & nail services. Located at Tilak Rd, Sector 27, Pradhikaran, Nigdi. Call +91 74995 39835.",
+  title: "SWATI'S BEAUTY SALON SPA AND ACADEMY — Unisex Hair Salon in Pradhikaran, Akurdi, Pune",
+  description: "SWATI'S BEAUTY SALON SPA AND ACADEMY in Akurdi, Pune — premium unisex hair cuts, hair colour, skin & nail services. Located at 20/4, Lig Colony Road, Sindhu Nagar, Sector 25, Pradhikaran, Akurdi. Call +91 72769 59293.",
 };
 
 export default function RootLayout({
